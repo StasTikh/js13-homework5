@@ -1,0 +1,27 @@
+
+.card h4:hover{
+    text-decoration:underline;
+} 
+
+.descript {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+}
+
+img {
+    width: 8rem;
+    height: 8rem;
+}
+
+#marketPlace {
+    margin-left: 13%;
+}
+
+/* .btn-group {
+    position: relative;
+    float: right;
+} */
+
