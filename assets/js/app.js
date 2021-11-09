@@ -4,8 +4,8 @@ let stuff = await fetch(marketURL);
 stuff = await stuff.json();
 console.log(stuff);
 
-function drawMarketPlace() {
-    marketPlace.innerHTML = stuff.map(item => `
+function drawMarketPlace(array) {
+    marketPlace.innerHTML = array.map(item => `
                             <div class="card m-2 shadow p-3 mb-5 bg-white rounded">
                                     <img src="${item.image}" class="mx-auto" title="${item.title}">
                                 <div class="card-body">
@@ -17,26 +17,26 @@ function drawMarketPlace() {
     `).join("");
 };
 
-drawMarketPlace();
+drawMarketPlace(stuff);
 
 lowerP.addEventListener("click", function(){
     stuff.sort((a,b) => a.price > b.price ? 1 : -1);
-    drawMarketPlace();
+    drawMarketPlace(stuff);
 });
 
 higherP.addEventListener("click", function(){
     stuff.sort((a,b) => a.price < b.price ? 1 : -1);
-    drawMarketPlace();
+    drawMarketPlace(stuff);
 });
 
 lowerN.addEventListener("click", function(){
     stuff.sort((a,b) => a.title > b.title ? -1 : 1);
-    drawMarketPlace();
+    drawMarketPlace(stuff);
     console.log(stuff);
 });
 
 higherN.addEventListener("click", function(){
     stuff.sort((a,b) => a.title > b.title ? 1 : -1);
-    drawMarketPlace();
+    drawMarketPlace(stuff);
     console.log(stuff);
 });
